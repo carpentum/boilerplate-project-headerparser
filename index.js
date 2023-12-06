@@ -16,17 +16,17 @@ app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/views/index.html");
+  res.status(200).sendFile(__dirname + "/views/index.html");
 });
 
 // your first API endpoint...
 app.get("/api/hello", function (req, res) {
-  res.json({ greeting: "hello API" });
+  res.status(200).json({ greeting: "hello API" });
 });
 
 // your first API endpoint...
 app.get("/api/whoami", function (req, res) {
-  res.json({
+  res.status(200).json({
     ipaddress: req.ip,
     language: req.headers["accept-language"],
     software: req.headers["user-agent"],
